@@ -22,6 +22,12 @@ class ReviewsController < ApplicationController
     end
 
     def update
+        @review = Review.find(params[:id])
+        @review.update(
+            rating: params[:rating],
+            description: params[:description]
+        )
+        render json: @review
 
     end
 
