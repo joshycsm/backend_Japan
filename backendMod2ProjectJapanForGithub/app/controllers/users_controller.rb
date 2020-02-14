@@ -14,13 +14,15 @@ class UsersController < ApplicationController
             name: params[:name]
         )
 
-        render json: @user
+        redirect_to 'http://localhost:3001/'
+        # render json: @user
     end
 
     def destroy
         @user = User.find(params[:id])
         @user.destroy
 
-        render json: @user
+        redirect_to 'http://localhost:3001/'
+        # render json: @user
     end
 end

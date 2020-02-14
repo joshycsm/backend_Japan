@@ -30,13 +30,15 @@ class PlacesController < ApplicationController
             location: params[:location]
         )
 
-        render json: @place
+        redirect_to 'http://localhost:3001/'
+        # render json: @place
     end
 
     def destroy
         @place = Place.find(params[:id])
         @place.destroy
 
-        render json: @place
+        redirect_to 'http://localhost:3001/'
+        # render json: @place
     end
 end

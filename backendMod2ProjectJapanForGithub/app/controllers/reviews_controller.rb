@@ -17,8 +17,8 @@ class ReviewsController < ApplicationController
             rating: params[:rating],
             description: params[:description]
         )
-
-        render json: @review
+        redirect_to 'http://localhost:3001/'
+        # render json: @review
     end
 
     def update
@@ -27,7 +27,8 @@ class ReviewsController < ApplicationController
             rating: params[:rating],
             description: params[:description]
         )
-        render json: @review
+        redirect_to 'http://localhost:3001/'
+        # render json: @review
 
     end
 
@@ -35,6 +36,7 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         @review.destroy
 
-        render json: @review
+        redirect_to 'http://localhost:3001/'
+        # render json: @review
     end
 end
